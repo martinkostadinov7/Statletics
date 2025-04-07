@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal class RunningRecordRepository : IDb<RunningRecord, int>
+    public class RunningRecordRepository : IDb<RunningRecord, int>
     {
         private StatleticsContext dbContext;
         public RunningRecordRepository(StatleticsContext dbContext)

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal class DisciplineRepository : IDb<Discipline, int>
+    public class DisciplineRepository : IDb<Discipline, int>
     {
         private StatleticsContext dbContext;
 

@@ -11,12 +11,4 @@ public partial class Category
 
     public virtual List<Discipline> Disciplines { get; set; } = new List<Discipline>();
 
-    public Category(string name)
-    {
-        Name = name;
-    }
-    private Category()
-    {
-        
-    }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal class CategoryRepository : IDb<Category, int>
+    public class CategoryRepository : IDb<Category, int>
     {
         private StatleticsContext dbContext;
         public CategoryRepository(StatleticsContext dbContext)
@@ -21,7 +21,7 @@ namespace DataLayer
             List<Discipline> disciplines = new List<Discipline>(item.Disciplines.Count);
             for (int i = 0; i < item.Disciplines.Count; ++i)
             {
-                Discipline disciplineFromDb = dbContext.Disciplines.Find(item.Disciplines[i].ISBN);
+                Discipline disciplineFromDb = dbContext.Disciplines.Find(item.Disciplines[i].Id);
                 if (disciplineFromDb != null) disciplines.Add(disciplineFromDb);
                 else disciplines.Add(item.Disciplines[i]);
             }
@@ -34,9 +34,11 @@ namespace DataLayer
         public void Delete(int key)
         {
             Category categoryFromDb = dbContext.Categories.Find(key);
-            if (categoryFromDb == null) { throw new ArgumentException($"Category with key {key} does not exist!"); }
-            dbContext.Categories.Remove(categoryFromDb);
-            dbContext.SaveChanges();
+            if (categoryFromDb != null) 
+            {
+                dbContext.Categories.Remove(categoryFromDb);
+                dbContext.SaveChanges();
+            }
         }
 
         public Category Read(int key, bool useNavigationalProperties = false, bool isReadOnly = false)
@@ -46,8 +48,6 @@ namespace DataLayer
             if (isReadOnly) query = query.AsNoTrackingWithIdentityResolution();
 
             Category category = query.FirstOrDefault(o => o.Id == key);
-
-            if (category == null) throw new ArgumentException($"Order with id = {key} does not exist!");
 
             return category;
         }
