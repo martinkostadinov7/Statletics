@@ -15,7 +15,7 @@ namespace ServiceLayer
         {
             repository = new CategoryRepository(new StatleticsContext());
         }
-        public void CreateCategory(string name)
+        private void CreateCategory(string name)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -35,8 +35,6 @@ namespace ServiceLayer
                 throw new ArgumentException($"Category with name {name} already exists!");
             }
 
-            repository.Create(categoryFromDb);
-            
         }
         public void DeleteCategory(int id)
         {

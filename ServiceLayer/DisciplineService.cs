@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer
 {
-    internal class DisciplineService
+    public class DisciplineService
     {
         private DisciplineRepository disciplineRepository;
         private CategoryRepository categoryRepository;
@@ -50,7 +50,7 @@ namespace ServiceLayer
         {
             Discipline discipline = disciplineRepository.Read(key);
             if (discipline == null) { throw new ArgumentException($"Discipline with id {key} does not exist!"); }
-            disciplineRepository.Delete(discipline);
+            disciplineRepository.Delete(discipline.Id);
         }
 
     }

@@ -18,5 +18,9 @@ public partial class RunningRecord
     public string? ActivityType { get; set; }
 
     public bool? IsOutdoor { get; set; }
-    
+    public RunningRecord()
+    {
+        
+    }
+
 }

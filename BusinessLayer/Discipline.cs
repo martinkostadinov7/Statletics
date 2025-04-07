@@ -12,5 +12,9 @@ public partial class Discipline
     public string Name { get; set; } = null!;
 
     public virtual Category IdCategoryNavigation { get; set; } = null!;
-    
+    public Discipline()
+    {
+        
+    }
+
 }

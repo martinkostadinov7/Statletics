@@ -10,5 +10,9 @@ public partial class Category
     public string Name { get; set; } = null!;
 
     public virtual List<Discipline> Disciplines { get; set; } = new List<Discipline>();
+    public Category()
+    {
+        
+    }
 
 }

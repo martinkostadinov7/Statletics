@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer
 {
-    internal class RunningRecordService
+    public class RunningRecordService
     {
         private RunningRecordRepository runningRecordRepository;
         private DisciplineRepository disciplineRepository;
@@ -54,7 +54,7 @@ namespace ServiceLayer
         {
             RunningRecord runningRecord = runningRecordRepository.Read(id);
             if (runningRecord == null) { throw new ArgumentException($"Record with id {id} does not exist!"); }
-            runningRecordRepository.Update(runningRecord);
+            runningRecordRepository.Delete(runningRecord.Id);
         }
     }
 }
