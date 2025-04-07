@@ -12,4 +12,15 @@ public partial class Discipline
     public string Name { get; set; } = null!;
 
     public virtual Category IdCategoryNavigation { get; set; } = null!;
+    private Discipline()
+    {
+        
+    }
+
+    public Discipline(int idCategory, string name)
+    {
+        IdCategory = idCategory;
+        Name = name;
+        IdCategoryNavigation.Id = IdCategory;
+    }
 }

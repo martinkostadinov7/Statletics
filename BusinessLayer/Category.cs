@@ -9,5 +9,14 @@ public partial class Category
 
     public string Name { get; set; } = null!;
 
-    public virtual ICollection<Discipline> Disciplines { get; set; } = new List<Discipline>();
+    public virtual List<Discipline> Disciplines { get; set; } = new List<Discipline>();
+
+    public Category(string name)
+    {
+        Name = name;
+    }
+    private Category()
+    {
+        
+    }
 }
