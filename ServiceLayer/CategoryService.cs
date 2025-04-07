@@ -15,7 +15,7 @@ namespace ServiceLayer
         {
             repository = new CategoryRepository(new StatleticsContext());
         }
-        public void AddCategory(string name)
+        public void CreateCategory(string name)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -38,7 +38,7 @@ namespace ServiceLayer
             repository.Create(categoryFromDb);
             
         }
-        public void RemoveCategory(int id)
+        public void DeleteCategory(int id)
         {
             Category categoryFromDb = repository.ReadAll().FirstOrDefault(c => c.Id == id);
             if (categoryFromDb == null) { throw new ArgumentException($"Category with id {id} does not exist!"); }
@@ -47,7 +47,18 @@ namespace ServiceLayer
         public Category GetCategory(int id)
         {
             Category categoryFromDb = repository.Read(id); // to do navigationalproperties and readonly
-        
+            if (categoryFromDb == null) { throw new ArgumentException($"Category with id {id} does not exist!"); }
+            return categoryFromDb;
+        }
+        public List<Category> GetAllCategories()
+        {
+            return repository.ReadAll().ToList(); // same
+        }
+        public void Update(int id)
+        {
+            Category categoryFromDb = GetCategory(id);
+            if (categoryFromDb == null) { throw new ArgumentException($"Category with id {id} does not exist!"); }
+            repository.Update(categoryFromDb); // same
         }
     }
 }
