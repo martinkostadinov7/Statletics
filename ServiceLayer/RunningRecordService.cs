@@ -56,5 +56,11 @@ namespace ServiceLayer
             if (runningRecord == null) { throw new ArgumentException($"Record with id {id} does not exist!"); }
             runningRecordRepository.Delete(runningRecord.Id);
         }
+        public RunningRecord GetPersonalBest(int id_discipline)
+        {
+            List<RunningRecord> results = ReadAllRunningRecords();
+            RunningRecord personalBest = results.OrderByDescending(x => x.Result).Where(x => x.IdDiscipline == id_discipline).FirstOrDefault();
+            return personalBest;
+        }
     }
 }

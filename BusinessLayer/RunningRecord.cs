@@ -22,5 +22,8 @@ public partial class RunningRecord
     {
         
     }
-
+    public override string ToString()
+    {
+        return $"{Result} - {DateTime}";
+    }
 }

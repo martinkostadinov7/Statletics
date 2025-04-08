@@ -1,8 +1,8 @@
 namespace WinFormsUI
 {
-    public partial class Form1 : Form
+    public partial class Statletics : Form
     {
-        public Form1()
+        public Statletics()
         {
             InitializeComponent();
         }
