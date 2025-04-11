@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-
+using BusinessLayer;
 namespace DataLayer;
 
 public partial class StatleticsContext : DbContext
