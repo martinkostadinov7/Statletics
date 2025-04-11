@@ -19,5 +19,5 @@ public partial class Athlete
 
     public string? Notes { get; set; }
 
-    public virtual ICollection<Run> Runs { get; set; } = new List<Run>();
+    public virtual List<Run> Runs { get; set; } = new List<Run>();
 }
