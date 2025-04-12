@@ -24,9 +24,9 @@ namespace ServiceLayer
                 throw new ArgumentException("Last name is required!");
             if (string.IsNullOrWhiteSpace(gender))
                 throw new ArgumentException("Gender is required!");
-            if (dateOfBirth < DateTime.Now)
+            if (dateOfBirth > DateTime.Now)
                 throw new ArgumentException("Birth date cannot be in the future!");
-            if (gender != "male" || gender != "female")
+            if (gender != "male" && gender != "female")
                 throw new ArgumentException("Invalid gender!");
 
             var athlete = new Athlete
@@ -60,9 +60,9 @@ namespace ServiceLayer
                 throw new ArgumentException("Last name is required!");
             if (string.IsNullOrWhiteSpace(gender))
                 throw new ArgumentException("Gender is required!");
-            if (dateOfBirth < DateTime.Now)
+            if (dateOfBirth > DateTime.Now)
                 throw new ArgumentException("Birth date cannot be in the future!");
-            if (gender != "male" || gender != "female")
+            if (gender != "male" && gender != "female")
                 throw new ArgumentException("Invalid gender!");
 
             athlete.FirstName = firstName;
