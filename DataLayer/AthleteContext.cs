@@ -23,8 +23,8 @@ namespace DataLayer
 
         public void Delete(int id)
         {
-            Athlete athleteFromDb = GetById(id);
-            dbContext.Athletes.Remove(athleteFromDb);
+            Athlete athlete = GetById(id);
+            dbContext.Athletes.Remove(athlete);
             dbContext.SaveChanges();
         }
 
@@ -33,10 +33,9 @@ namespace DataLayer
             return dbContext.Athletes.ToList();
         }
 
-        public Athlete GetById(int id)
+        public Athlete? GetById(int id)
         {
             Athlete athleteFromDb = dbContext.Athletes.FirstOrDefault(a => a.Id == id);
-            if (athleteFromDb == null) throw new ArgumentException($"Athlete with id {id} does not exist.");
             return athleteFromDb;
         }
 

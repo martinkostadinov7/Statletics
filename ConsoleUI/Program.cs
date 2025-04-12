@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string? input = Console.ReadLine();
+            if (!double.TryParse(input, out double timeSeconds))
+                throw new ArgumentException("Invalid time!");
+
         }
     }
 }
