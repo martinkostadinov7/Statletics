@@ -28,12 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            addathleteButton = new Button();
+            firstNameLabel = new Label();
+            lastNameLabel = new Label();
+            firstNameTextBox = new TextBox();
+            lastNameTextBox = new TextBox();
+            dateBirthDatePicker = new DateTimePicker();
+            birthDateLabel = new Label();
+            maleRadioButton = new RadioButton();
+            genderLabel = new Label();
+            femaleRadioButton = new RadioButton();
+            clubNameLabel = new Label();
+            clubNameTextBox = new TextBox();
+            notesLabel = new Label();
+            notesTextBox = new TextBox();
+            athleteListView = new ListView();
+            listBox1 = new ListBox();
+            errorMessageLabel = new Label();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // addathleteButton
+            // 
+            addathleteButton.Location = new Point(602, 35);
+            addathleteButton.Name = "addathleteButton";
+            addathleteButton.Size = new Size(148, 100);
+            addathleteButton.TabIndex = 0;
+            addathleteButton.Text = "Add Athlete";
+            addathleteButton.UseVisualStyleBackColor = true;
+            addathleteButton.Click += addathleteButton_Click;
+            // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new Point(37, 35);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new Size(86, 20);
+            firstNameLabel.TabIndex = 1;
+            firstNameLabel.Text = "First Name*";
+            // 
+            // lastNameLabel
+            // 
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new Point(181, 35);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(85, 20);
+            lastNameLabel.TabIndex = 2;
+            lastNameLabel.Text = "Last Name*";
+            // 
+            // firstNameTextBox
+            // 
+            firstNameTextBox.Location = new Point(37, 58);
+            firstNameTextBox.Name = "firstNameTextBox";
+            firstNameTextBox.Size = new Size(111, 27);
+            firstNameTextBox.TabIndex = 3;
+            // 
+            // lastNameTextBox
+            // 
+            lastNameTextBox.Location = new Point(181, 58);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(111, 27);
+            lastNameTextBox.TabIndex = 4;
+            // 
+            // dateBirthDatePicker
+            // 
+            dateBirthDatePicker.Location = new Point(322, 58);
+            dateBirthDatePicker.Name = "dateBirthDatePicker";
+            dateBirthDatePicker.Size = new Size(250, 27);
+            dateBirthDatePicker.TabIndex = 5;
+            // 
+            // birthDateLabel
+            // 
+            birthDateLabel.AutoSize = true;
+            birthDateLabel.Location = new Point(322, 35);
+            birthDateLabel.Name = "birthDateLabel";
+            birthDateLabel.Size = new Size(82, 20);
+            birthDateLabel.TabIndex = 6;
+            birthDateLabel.Text = "Birth Date*";
+            // 
+            // maleRadioButton
+            // 
+            maleRadioButton.AutoSize = true;
+            maleRadioButton.Location = new Point(37, 130);
+            maleRadioButton.Name = "maleRadioButton";
+            maleRadioButton.Size = new Size(63, 24);
+            maleRadioButton.TabIndex = 7;
+            maleRadioButton.TabStop = true;
+            maleRadioButton.Text = "Male";
+            maleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // genderLabel
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Location = new Point(37, 107);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(63, 20);
+            genderLabel.TabIndex = 8;
+            genderLabel.Text = "Gender*";
+            // 
+            // femaleRadioButton
+            // 
+            femaleRadioButton.AutoSize = true;
+            femaleRadioButton.Location = new Point(37, 160);
+            femaleRadioButton.Name = "femaleRadioButton";
+            femaleRadioButton.Size = new Size(78, 24);
+            femaleRadioButton.TabIndex = 9;
+            femaleRadioButton.TabStop = true;
+            femaleRadioButton.Text = "Female";
+            femaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // clubNameLabel
+            // 
+            clubNameLabel.AutoSize = true;
+            clubNameLabel.Location = new Point(181, 130);
+            clubNameLabel.Name = "clubNameLabel";
+            clubNameLabel.Size = new Size(83, 20);
+            clubNameLabel.TabIndex = 10;
+            clubNameLabel.Text = "Club Name";
+            // 
+            // clubNameTextBox
+            // 
+            clubNameTextBox.Location = new Point(181, 157);
+            clubNameTextBox.Name = "clubNameTextBox";
+            clubNameTextBox.Size = new Size(111, 27);
+            clubNameTextBox.TabIndex = 11;
+            // 
+            // notesLabel
+            // 
+            notesLabel.AutoSize = true;
+            notesLabel.Location = new Point(322, 107);
+            notesLabel.Name = "notesLabel";
+            notesLabel.Size = new Size(48, 20);
+            notesLabel.TabIndex = 12;
+            notesLabel.Text = "Notes";
+            // 
+            // notesTextBox
+            // 
+            notesTextBox.Location = new Point(322, 130);
+            notesTextBox.Multiline = true;
+            notesTextBox.Name = "notesTextBox";
+            notesTextBox.Size = new Size(250, 54);
+            notesTextBox.TabIndex = 13;
+            // 
+            // athleteListView
+            // 
+            athleteListView.Location = new Point(37, 249);
+            athleteListView.Name = "athleteListView";
+            athleteListView.Size = new Size(713, 121);
+            athleteListView.TabIndex = 14;
+            athleteListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(114, 249);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(150, 104);
+            listBox1.TabIndex = 15;
+            // 
+            // errorMessageLabel
+            // 
+            errorMessageLabel.AutoSize = true;
+            errorMessageLabel.ForeColor = Color.IndianRed;
+            errorMessageLabel.Location = new Point(602, 162);
+            errorMessageLabel.Name = "errorMessageLabel";
+            errorMessageLabel.Size = new Size(0, 20);
+            errorMessageLabel.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(36, 198);
+            label1.Name = "label1";
+            label1.Size = new Size(125, 20);
+            label1.TabIndex = 17;
+            label1.Text = "* - Required Field";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(errorMessageLabel);
+            Controls.Add(listBox1);
+            Controls.Add(athleteListView);
+            Controls.Add(notesTextBox);
+            Controls.Add(notesLabel);
+            Controls.Add(clubNameTextBox);
+            Controls.Add(clubNameLabel);
+            Controls.Add(femaleRadioButton);
+            Controls.Add(genderLabel);
+            Controls.Add(maleRadioButton);
+            Controls.Add(birthDateLabel);
+            Controls.Add(dateBirthDatePicker);
+            Controls.Add(lastNameTextBox);
+            Controls.Add(firstNameTextBox);
+            Controls.Add(lastNameLabel);
+            Controls.Add(firstNameLabel);
+            Controls.Add(addathleteButton);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button addathleteButton;
+        private Label firstNameLabel;
+        private Label lastNameLabel;
+        private TextBox firstNameTextBox;
+        private TextBox lastNameTextBox;
+        private DateTimePicker dateBirthDatePicker;
+        private Label birthDateLabel;
+        private RadioButton maleRadioButton;
+        private Label genderLabel;
+        private RadioButton femaleRadioButton;
+        private Label clubNameLabel;
+        private TextBox clubNameTextBox;
+        private Label notesLabel;
+        private TextBox notesTextBox;
+        private ListView athleteListView;
+        private ListBox listBox1;
+        private Label errorMessageLabel;
+        private Label label1;
     }
 }
