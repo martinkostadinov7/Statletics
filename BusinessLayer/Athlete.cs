@@ -20,4 +20,6 @@ public partial class Athlete
     public string? Notes { get; set; }
 
     public virtual List<Run> Runs { get; set; } = new List<Run>();
+    public string FullName => $"{FirstName} {LastName}";
+
 }

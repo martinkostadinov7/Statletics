@@ -42,10 +42,13 @@
             clubNameTextBox = new TextBox();
             notesLabel = new Label();
             notesTextBox = new TextBox();
-            athleteListView = new ListView();
-            listBox1 = new ListBox();
             errorMessageLabel = new Label();
             label1 = new Label();
+            athletesComboBox = new ComboBox();
+            athletesGridView = new DataGridView();
+            editAthleteButton = new Button();
+            deleteAthleteButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)athletesGridView).BeginInit();
             SuspendLayout();
             // 
             // addathleteButton
@@ -170,22 +173,6 @@
             notesTextBox.Size = new Size(250, 54);
             notesTextBox.TabIndex = 13;
             // 
-            // athleteListView
-            // 
-            athleteListView.Location = new Point(37, 249);
-            athleteListView.Name = "athleteListView";
-            athleteListView.Size = new Size(713, 121);
-            athleteListView.TabIndex = 14;
-            athleteListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(114, 249);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 104);
-            listBox1.TabIndex = 15;
-            // 
             // errorMessageLabel
             // 
             errorMessageLabel.AutoSize = true;
@@ -204,15 +191,54 @@
             label1.TabIndex = 17;
             label1.Text = "* - Required Field";
             // 
+            // athletesComboBox
+            // 
+            athletesComboBox.FormattingEnabled = true;
+            athletesComboBox.Location = new Point(599, 198);
+            athletesComboBox.Name = "athletesComboBox";
+            athletesComboBox.Size = new Size(151, 28);
+            athletesComboBox.TabIndex = 18;
+            // 
+            // athletesGridView
+            // 
+            athletesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            athletesGridView.Location = new Point(12, 257);
+            athletesGridView.Name = "athletesGridView";
+            athletesGridView.RowHeadersWidth = 51;
+            athletesGridView.Size = new Size(667, 181);
+            athletesGridView.TabIndex = 19;
+            // 
+            // editAthleteButton
+            // 
+            editAthleteButton.Location = new Point(685, 257);
+            editAthleteButton.Name = "editAthleteButton";
+            editAthleteButton.Size = new Size(103, 89);
+            editAthleteButton.TabIndex = 20;
+            editAthleteButton.Text = "Edit";
+            editAthleteButton.UseVisualStyleBackColor = true;
+            editAthleteButton.Click += editAthleteButton_Click;
+            // 
+            // deleteAthleteButton
+            // 
+            deleteAthleteButton.Location = new Point(685, 352);
+            deleteAthleteButton.Name = "deleteAthleteButton";
+            deleteAthleteButton.Size = new Size(103, 86);
+            deleteAthleteButton.TabIndex = 21;
+            deleteAthleteButton.Text = "Delete";
+            deleteAthleteButton.UseVisualStyleBackColor = true;
+            deleteAthleteButton.Click += deleteAthleteButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(deleteAthleteButton);
+            Controls.Add(editAthleteButton);
+            Controls.Add(athletesGridView);
+            Controls.Add(athletesComboBox);
             Controls.Add(label1);
             Controls.Add(errorMessageLabel);
-            Controls.Add(listBox1);
-            Controls.Add(athleteListView);
             Controls.Add(notesTextBox);
             Controls.Add(notesLabel);
             Controls.Add(clubNameTextBox);
@@ -229,6 +255,7 @@
             Controls.Add(addathleteButton);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)athletesGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,9 +276,11 @@
         private TextBox clubNameTextBox;
         private Label notesLabel;
         private TextBox notesTextBox;
-        private ListView athleteListView;
-        private ListBox listBox1;
         private Label errorMessageLabel;
         private Label label1;
+        private ComboBox athletesComboBox;
+        private DataGridView athletesGridView;
+        private Button editAthleteButton;
+        private Button deleteAthleteButton;
     }
 }

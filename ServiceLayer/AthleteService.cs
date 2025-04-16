@@ -16,7 +16,7 @@ namespace ServiceLayer
             this.context = new AthleteContext();
         }
 
-        public void AddAthlete(string firstName, string lastName, DateTime? dateOfBirth, string gender, string? club, string? notes)
+        public Athlete AddAthlete(string firstName, string lastName, DateTime? dateOfBirth, string gender, string? club, string? notes)
         {
             if (string.IsNullOrWhiteSpace(firstName))
                 throw new ArgumentException("First name is required!");
@@ -40,6 +40,7 @@ namespace ServiceLayer
             };
       
             context.Add(athlete);
+            return athlete;
         }
         
         public void DeleteAthlete(int id)
